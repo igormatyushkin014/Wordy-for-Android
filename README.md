@@ -1,5 +1,5 @@
 <p align="center" >
-	<img src="/Images/logo_2048_2048.png" alt="Wordy" title="Wordy" width="300px" height="300px">
+	<img src="/Images/logo_2048_600.png" alt="Wordy" title="Wordy">
 </p>
 
 <p align="center">
