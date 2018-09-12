@@ -57,6 +57,16 @@ System.out.println(invertedText); // "!iH"
 
 This is how it works. You have to get an instance of `TextFilter` and transfer source text to it. Then, apply some effects and retrieve the final text by `.getResult()` call.
 
+In the example above, the `InversionEffect` will be applied to the entire string. The same time, you can apply effect to a particular substring:
+
+```java
+String invertedText = new TextFilter("Hi!")
+    .apply(new InversionEffect())
+    .apply(InversionEffect(), 0, 1) // Start index is 0, end index is 1
+    .getResult();
+System.out.println(invertedText); // "iH!"
+```
+
 You can add as many effects as you want:
 
 ```java
