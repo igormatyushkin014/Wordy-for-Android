@@ -1,4 +1,4 @@
-package com.visuality.wordy;
+package com.visuality.wordy.effects;
 
 public class CaseEffect extends Effect {
 
