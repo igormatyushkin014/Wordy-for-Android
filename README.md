@@ -75,7 +75,7 @@ Below you can see the full list of available effects:
   </tr>
   <tr>
     <td>
-      <code>CaseEffect</code>
+      <code><a href="#case-effect">CaseEffect</a></code>
     </td>
     <td>
       <code>CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER)</code><br>
@@ -109,6 +109,15 @@ Below you can see the full list of available effects:
     </td>
   </tr>
 </table>
+
+### Case Effect
+
+`TextCase` is the only parameter required by `CaseEffect`'s constructor. Available values are:
+
+- `ALL_UPPER` - Makes the entire text uppercased.
+- `ALL_LOWER` - Makes the entire text lowercased.
+- `FIRST_UPPER_NEXT_LOWER` - The first symbol is uppercased, other text is lowercased.
+- `FIRST_LOWER_NEXT_UPPER` - The first symbol is lowercased, other text is uppercased.
 
 ## License
 
