@@ -40,7 +40,49 @@ dependencies {
 
 ## Usage
 
-The project is currently in development. Documentation will be uploaded soon.
+### Text Filter
+
+First of all, you need to get to know `TextFilter` class. Instance of `TextFilter` is your entry point to the world of amazing effects. Look at example below:
+
+```java
+String invertedText = new TextFilter("Hi!")
+    .apply(new InversionEffect())
+    .getResult();
+System.out.println(invertedText); // "!iH"
+```
+
+This is how it works. You have to get an instance of `TextFilter` and transfer source text to it. Then, apply some effects and retrieve the final text by `.getResult()` call.
+
+You can add as many effects as you want:
+
+```java
+String invertedText = new TextFilter("This text will be rotated")
+    .apply(new RotationEffect(TextRotation.INVERTED))
+    .apply(new InversionEffect())
+    .getResult();
+System.out.println(invertedText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
+```
+
+Below you can see the full list of available effects:
+
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Available settings</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <code>CaseEffect</code>
+    </td>
+    <td>
+      <code>TextCase</code><br>
+    </td>
+    <td>
+      Changes case for the entire text or letters at particular positions.
+    </td>
+  </tr>
+</table>
 
 ## License
 
