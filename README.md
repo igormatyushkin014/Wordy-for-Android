@@ -65,59 +65,81 @@ System.out.println(invertedText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
 
 ## Text Effects
 
-Below you can see the full list of available effects:
-
-<table>
-  <tr>
-    <th>Class</th>
-    <th>Constructor example</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>
-      <code><a href="#case-effect">CaseEffect</a></code>
-    </td>
-    <td>
-      <code>CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER)</code><br>
-    </td>
-    <td>
-      Changes case for the entire text or letters at particular positions.
-    </td>
-  </tr>
-    <td>
-      <code>RotationEffect</code>
-    </td>
-    <td>
-      <code>RotationEffect(TextRotation.UPSIDE_DOWN)</code><br>
-    </td>
-    <td>
-      Rotates letters. For example,<br><code>p</code> becomes <code>d</code><br>and<br><code>h</code> becomes <code>ɥ</code>.
-    </td>
-  </tr>
-    </tr>
-    <td>
-      <code>InversionEffect</code>
-    </td>
-    <td>
-      <code>InversionEffect()</code><br>
-    </td>
-    <td>
-      Flips text from right to left, so<br>
-      <code>Hi!</code><br>
-      turns into<br>
-      <code>!iH</code>
-    </td>
-  </tr>
-</table>
-
 ### Case Effect
 
-`TextCase` is the only parameter required by `CaseEffect`'s constructor. Available values are:
+Represented by `CaseEffect` class. Changes case for the entire text or letters at particular positions.
+
+Constructor example:
+
+```java
+new CaseEffect(
+    TextCase.FIRST_UPPER_NEXT_LOWER
+)
+```
+
+[`TextCase`](#text-case) is the only setting that defines `CaseEffect`'s behavior.
+
+### Rotation Effect
+
+Represented by `RotationEffect` class. Rotates letters. For example,
+
+`p` becomes `d`
+
+and
+
+`h` becomes `ɥ`.
+
+`RotationEffect` has two available constructors. The most detailed version of constructor:
+
+```java
+new RotationEffect(
+    TextRotation.INVERTED,
+    true
+)
+```
+
+The first parameter is a [`TextRotation`](#text-rotation) value that defines the way to rotate symbols.
+
+The second parameter of boolean type defines whether the rotation alrorithm should be case sensitive. If it equals to `false`, some uppercased symbols might become lowercased as a result of rotation.
+
+The second constructor is a simplified version of the first one:
+
+```java
+new RotationEffect(
+    TextRotation.INVERTED
+)
+```
+
+It's case sensitive by default. Usually, it's enough to use the second constructor excepting cases when you need more flexibility.
+
+### Inversion Effect
+
+Represented by `InversionEffect` class. Flips text from right to left, so
+
+`Hi!`
+
+turns into
+
+`!iH`
+
+## Options
+
+### Text Case
+
+`TextCase` is used as a setting for `CaseEffect` instance. Available values are:
 
 - `ALL_UPPER` - Makes the entire text uppercased.
 - `ALL_LOWER` - Makes the entire text lowercased.
 - `FIRST_UPPER_NEXT_LOWER` - The first symbol is uppercased, other text is lowercased.
 - `FIRST_LOWER_NEXT_UPPER` - The first symbol is lowercased, other text is uppercased.
+
+### Text Rotation
+
+`TextRotation` defines the conditions of symbol rotation. Available values:
+
+- `NORMAL`: Forces all symbols to be rotated to normal position. It means that `ʎ` would become `y` and `h` would stay `h`.
+- `UPSIDE_DOWN`: Forces all symbols to be rotated upside down. In this case, `y` would turn into `ʎ`, but `ɥ` wouldn't change at all.
+- `INVERTED`: Normal symbols are forced to be rotated meanwhile rotated symbols become normal. So, `y` becomes `ʎ` and `ɥ` turns into `h`.
 
 ## License
 
