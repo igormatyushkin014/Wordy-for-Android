@@ -49,10 +49,10 @@ dependencies {
 First of all, you need to get to know `TextFilter` class. Instance of `TextFilter` is your entry point to the world of amazing effects. Look at example below:
 
 ```java
-String invertedText = new TextFilter("Hi!")
+String filteredText = new TextFilter("Hi!")
     .apply(new InversionEffect())
     .getResult();
-System.out.println(invertedText); // "!iH"
+System.out.println(filteredText); // "!iH"
 ```
 
 This is how it works. You have to get an instance of `TextFilter` and transfer source text to it. Then, apply some effects and retrieve the final text by `.getResult()` call.
@@ -60,21 +60,20 @@ This is how it works. You have to get an instance of `TextFilter` and transfer s
 In the example above, the `InversionEffect` will be applied to the entire string. The same time, you can apply effect to a particular substring:
 
 ```java
-String invertedText = new TextFilter("Hi!")
-    .apply(new InversionEffect())
-    .apply(InversionEffect(), 0, 1) // Start index is 0, end index is 1
+String filteredText = new TextFilter("Hi!")
+    .apply(new InversionEffect(), 0, 1) // Start index is 0, end index is 1
     .getResult();
-System.out.println(invertedText); // "iH!"
+System.out.println(filteredText); // "iH!"
 ```
 
 You can add as many effects as you want:
 
 ```java
-String invertedText = new TextFilter("This text will be rotated")
+String filteredText = new TextFilter("This text will be rotated")
     .apply(new RotationEffect(TextRotation.INVERTED))
     .apply(new InversionEffect())
     .getResult();
-System.out.println(invertedText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
+System.out.println(filteredText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
 ```
 
 ## Text Effects
