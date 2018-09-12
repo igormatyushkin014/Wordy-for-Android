@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.visuality.wordy.effects.CaseEffect;
-import com.visuality.wordy.tools.TextBuilder;
+import com.visuality.wordy.tools.TextFilter;
 import com.visuality.wordy.types.TextCase;
 
 public class MainActivity extends Activity {
@@ -18,9 +18,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         this.initializeTitleTextView();
         this.updateTitleTextView(
-                new TextBuilder("wordy demo")
-                    .add(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
-                    .build()
+                new TextFilter("wordy demo")
+                    .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                    .getResult()
         );
     }
 
