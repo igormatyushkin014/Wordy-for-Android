@@ -63,12 +63,14 @@ String invertedText = new TextFilter("This text will be rotated")
 System.out.println(invertedText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
 ```
 
+## Text Effects
+
 Below you can see the full list of available effects:
 
 <table>
   <tr>
     <th>Class</th>
-    <th>Available settings</th>
+    <th>Constructor example</th>
     <th>Description</th>
   </tr>
   <tr>
@@ -76,10 +78,20 @@ Below you can see the full list of available effects:
       <code>CaseEffect</code>
     </td>
     <td>
-      <code>TextCase</code><br>
+      <code>new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER)</code><br>
     </td>
     <td>
       Changes case for the entire text or letters at particular positions.
+    </td>
+  </tr>
+    <td>
+      <code>RotationEffect</code>
+    </td>
+    <td>
+      <code>new RotationEffect(TextRotation.UPSIDE_DOWN)</code><br>
+    </td>
+    <td>
+      Rotates letters. For example, <code>p</code> becomes <code>d</code> and <code>h</code> becomes <code>ɥ</code>.
     </td>
   </tr>
 </table>
