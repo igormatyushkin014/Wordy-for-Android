@@ -23,7 +23,7 @@ public class RotationEffect extends Effect {
         RotationStore rotationStore = new RotationStore();
         int ruleCount = rotationStore.getRuleCount();
 
-        for (int letterIndex = 0; letterIndex < textLength - 1; letterIndex++) {
+        for (int letterIndex = 0; letterIndex < textLength; letterIndex++) {
             final String sourceLetter = sourceText.substring(
                     letterIndex,
                     letterIndex + 1
@@ -63,6 +63,12 @@ public class RotationEffect extends Effect {
                             filteredLetter = rule.getNormal();
                         }
                         break;
+                }
+
+                boolean foundAppropriateRule = isNormal || isRotated;
+
+                if (foundAppropriateRule) {
+                    break;
                 }
             }
 
