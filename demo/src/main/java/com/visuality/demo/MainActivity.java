@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.visuality.wordy.effects.CaseEffect;
+import com.visuality.wordy.effects.InversionEffect;
+import com.visuality.wordy.effects.RotationEffect;
 import com.visuality.wordy.tools.TextFilter;
 import com.visuality.wordy.types.TextCase;
+import com.visuality.wordy.types.TextRotation;
 
 public class MainActivity extends Activity {
 
@@ -18,9 +21,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         this.initializeTitleTextView();
         this.updateTitleTextView(
-                new TextFilter("wordy demo")
-                    .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
-                    .getResult()
+                new TextFilter("WORDY demo")
+                        .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                        .apply(new RotationEffect(TextRotation.INVERTED))
+                        .apply(new InversionEffect())
+                        .getResult()
         );
     }
 
