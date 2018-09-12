@@ -6,13 +6,27 @@ import com.visuality.wordy.types.TextRotationRule;
 
 public class RotationEffect extends Effect {
 
-    private TextRotation textRotation;
+    private TextRotation rotation;
+
+    private boolean caseSensitive;
 
     public RotationEffect(
-            TextRotation textRotation
+            TextRotation rotation
     ) {
         super();
-        this.textRotation = textRotation;
+
+        this.rotation = rotation;
+        this.caseSensitive = true;
+    }
+
+    public RotationEffect(
+            TextRotation rotation,
+            boolean caseSensitive
+    ) {
+        super();
+
+        this.rotation = rotation;
+        this.caseSensitive = caseSensitive;
     }
 
     @Override
@@ -45,7 +59,7 @@ public class RotationEffect extends Effect {
                         rule.getRotated().toLowerCase()
                 );
 
-                switch (this.textRotation) {
+                switch (this.rotation) {
                     case NORMAL:
                         if (isRotated) {
                             filteredLetter = rule.getNormal();
@@ -72,9 +86,11 @@ public class RotationEffect extends Effect {
                 }
             }
 
-            filteredLetter = isUppercase
-                    ? filteredLetter.toUpperCase()
-                    : filteredLetter.toLowerCase();
+            if (this.caseSensitive) {
+                filteredLetter = isUppercase
+                        ? filteredLetter.toUpperCase()
+                        : filteredLetter.toLowerCase();
+            }
 
             filteredTextBuilder.append(
                     filteredLetter
