@@ -38,7 +38,7 @@ dependencies {
 
 ## Requirements
 
-* Android SDK 23 and later
+* Android SDK 15 and later
 * Android Studio 3.0 and later
 * Java 7 and later
 
