@@ -94,6 +94,20 @@ Below you can see the full list of available effects:
       Rotates letters. For example,<br><code>p</code> becomes <code>d</code><br>and<br><code>h</code> becomes <code>ɥ</code>.
     </td>
   </tr>
+    </tr>
+    <td>
+      <code>InversionEffect</code>
+    </td>
+    <td>
+      <code>InversionEffect()</code><br>
+    </td>
+    <td>
+      Flips text from right to left, so<br>
+      <code>Hi!</code><br>
+      turns into<br>
+      <code>!iH</code>
+    </td>
+  </tr>
 </table>
 
 ## License
