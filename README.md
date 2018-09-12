@@ -122,6 +122,12 @@ turns into
 
 `!iH`
 
+`InversionEffect`'s constructor is very simple and doesn't require any parameters:
+
+```java
+new InversionEffect()
+```
+
 ## Options
 
 ### Text Case
