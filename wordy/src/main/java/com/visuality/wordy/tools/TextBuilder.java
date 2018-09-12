@@ -25,4 +25,16 @@ public class TextBuilder {
         );
         return this;
     }
+
+    public String build() {
+        String resultText = new String(this.sourceText);
+
+        for (Effect effect : this.effects) {
+            resultText = effect.getFilteredText(
+                    resultText
+            );
+        }
+
+        return resultText;
+    }
 }
