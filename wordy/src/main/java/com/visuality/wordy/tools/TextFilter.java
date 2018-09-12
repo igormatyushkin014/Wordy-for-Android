@@ -1,6 +1,7 @@
 package com.visuality.wordy.tools;
 
 import com.visuality.wordy.effects.Effect;
+import com.visuality.wordy.types.TextChange;
 import com.visuality.wordy.types.TextSegment;
 
 import java.util.ArrayList;
@@ -82,30 +83,5 @@ public class TextFilter {
         }
 
         return resultText;
-    }
-
-    private class TextChange {
-
-        private Effect effect;
-
-        public Effect getEffect() {
-            return this.effect;
-        }
-
-        private TextSegment segment;
-
-        public TextSegment getSegment() {
-            return this.segment;
-        }
-
-        public TextChange(
-                Effect effect,
-                TextSegment segment
-        ) {
-            super();
-
-            this.effect = effect;
-            this.segment = segment;
-        }
     }
 }
