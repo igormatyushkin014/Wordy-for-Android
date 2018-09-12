@@ -78,7 +78,7 @@ Below you can see the full list of available effects:
       <code>CaseEffect</code>
     </td>
     <td>
-      <code>new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER)</code><br>
+      <code>CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER)</code><br>
     </td>
     <td>
       Changes case for the entire text or letters at particular positions.
@@ -88,10 +88,10 @@ Below you can see the full list of available effects:
       <code>RotationEffect</code>
     </td>
     <td>
-      <code>new RotationEffect(TextRotation.UPSIDE_DOWN)</code><br>
+      <code>RotationEffect(TextRotation.UPSIDE_DOWN)</code><br>
     </td>
     <td>
-      Rotates letters. For example, <code>p</code> becomes <code>d</code> and <code>h</code> becomes <code>ɥ</code>.
+      Rotates letters. For example,<br><code>p</code> becomes <code>d</code><br>and<br><code>h</code> becomes <code>ɥ</code>.
     </td>
   </tr>
 </table>
