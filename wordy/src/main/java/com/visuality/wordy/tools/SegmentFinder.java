@@ -2,7 +2,7 @@ package com.visuality.wordy.tools;
 
 import com.visuality.wordy.types.TextSegment;
 
-public class SegmentFinder {
+class SegmentFinder {
 
     private String sourceText;
 

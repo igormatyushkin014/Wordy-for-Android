@@ -1,7 +1,5 @@
 package com.visuality.wordy.data;
 
-import com.visuality.wordy.types.TextRotationRule;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 

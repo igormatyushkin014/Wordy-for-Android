@@ -1,4 +1,4 @@
-package com.visuality.wordy.types;
+package com.visuality.wordy.data;
 
 public class TextRotationRule {
 
