@@ -2,7 +2,7 @@ package com.visuality.wordy.effects;
 
 import com.visuality.wordy.types.TextRotation;
 
-class RotationEffect extends Effect {
+public class RotationEffect extends Effect {
 
     private TextRotation textRotation;
 
