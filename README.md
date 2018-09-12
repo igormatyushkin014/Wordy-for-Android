@@ -1,3 +1,7 @@
+<p align="center" >
+	<img src="/Images/logo_2048_2048.png" alt="Wordy" title="Wordy" width="300px" height="300px">
+</p>
+
 <p align="center">
 	<a href="https://http://www.android.com">
 		<img src="https://img.shields.io/badge/android-23-green.svg?style=flat">
