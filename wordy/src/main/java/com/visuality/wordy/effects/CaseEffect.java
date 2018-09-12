@@ -44,8 +44,8 @@ public class CaseEffect extends Effect {
                             otherText.toUpperCase()
                     );
                 }
+            default:
+                return new String(sourceText);
         }
-
-        return sourceText;
     }
 }
