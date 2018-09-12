@@ -1,17 +1,19 @@
 package com.visuality.wordy.effects;
 
+import com.visuality.wordy.types.TextCase;
+
 public class CaseEffect extends Effect {
 
-    private CaseChange caseChange;
+    private TextCase textCase;
 
-    public CaseEffect(CaseChange caseChange) {
+    public CaseEffect(TextCase textCase) {
         super();
-        this.caseChange = caseChange;
+        this.textCase = textCase;
     }
 
     @Override
     public String getFilteredText(String sourceText) {
-        switch (this.caseChange) {
+        switch (this.textCase) {
             case ALL_UPPER:
                 return sourceText.toUpperCase();
             case ALL_LOWER:
@@ -45,12 +47,5 @@ public class CaseEffect extends Effect {
         }
 
         return sourceText;
-    }
-
-    public enum CaseChange {
-        ALL_UPPER,
-        ALL_LOWER,
-        FIRST_UPPER_NEXT_LOWER,
-        FIRST_LOWER_NEXT_UPPER
     }
 }
