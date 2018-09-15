@@ -44,6 +44,12 @@ public class CaseEffect extends Effect {
                             otherText.toUpperCase()
                     );
                 }
+            case ALTERNATING_FIRST_UPPER_CASE:
+                // TODO: Implement case
+                return "";
+            case ALTERNATING_FIRST_LOWER_CASE:
+                // TODO: Implement case
+                return "";
             default:
                 return new String(sourceText);
         }
