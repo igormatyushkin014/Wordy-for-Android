@@ -45,13 +45,40 @@ public class CaseEffect extends Effect {
                     );
                 }
             case ALTERNATING_FIRST_UPPER_CASE:
-                // TODO: Implement case
-                return "";
+                return this.getAlternatingText(
+                        sourceText,
+                        true
+                );
             case ALTERNATING_FIRST_LOWER_CASE:
-                // TODO: Implement case
-                return "";
+                return this.getAlternatingText(
+                        sourceText,
+                        false
+                );
             default:
                 return new String(sourceText);
         }
+    }
+
+    private String getAlternatingText(
+            String sourceText,
+            boolean firstSymbolUppercased
+    ) {
+        char[] sourceSymbols = sourceText.toCharArray();
+        StringBuilder resultBuilder = new StringBuilder();
+
+        for (int symbolIndex = 0; symbolIndex < sourceSymbols.length; symbolIndex++) {
+            char sourceSymbol = sourceSymbols[symbolIndex];
+            boolean isEvenSymbolIndex = symbolIndex % 2 == 0;
+            boolean shouldMakeSymbolUppercased = (isEvenSymbolIndex && firstSymbolUppercased)
+                    || (!isEvenSymbolIndex && !firstSymbolUppercased);
+            char resultSymbol = shouldMakeSymbolUppercased
+                    ? Character.toUpperCase(sourceSymbol)
+                    : Character.toLowerCase(sourceSymbol);
+            resultBuilder.append(
+                    resultSymbol
+            );
+        }
+
+        return resultBuilder.toString();
     }
 }
