@@ -149,8 +149,10 @@ new InversionEffect()
 
 - `ALL_UPPER` - Makes the entire text uppercased.
 - `ALL_LOWER` - Makes the entire text lowercased.
-- `FIRST_UPPER_NEXT_LOWER` - The first symbol is uppercased, other text is lowercased.
-- `FIRST_LOWER_NEXT_UPPER` - The first symbol is lowercased, other text is uppercased.
+- `FIRST_UPPER_NEXT_LOWER` - First symbol is uppercased, other text is lowercased.
+- `FIRST_LOWER_NEXT_UPPER` - First symbol is lowercased, other text is uppercased.
+- `ALTERNATING_FIRST_UPPER_CASE` - Odd symbols are uppercased, even symbols are lowercased.
+- `ALTERNATING_FIRST_LOWER_CASE` - Odd symbols are lowercased, even symbols are uppercased.
 
 ### Text Rotation
 
