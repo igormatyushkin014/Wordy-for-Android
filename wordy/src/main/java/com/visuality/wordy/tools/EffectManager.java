@@ -6,13 +6,13 @@ import com.visuality.wordy.types.TextSegment;
 
 import java.util.ArrayList;
 
-public class TextFilter {
+public class EffectManager {
 
     private String sourceText;
 
     private ArrayList<TextChange> changes;
 
-    public TextFilter(
+    public EffectManager(
             String sourceText
     ) {
         super();
@@ -21,7 +21,7 @@ public class TextFilter {
         this.changes = new ArrayList<>();
     }
 
-    public TextFilter apply(Effect effect) {
+    public EffectManager apply(Effect effect) {
         TextSegment segment = new TextSegment(
                 0,
                 this.sourceText.length() - 1
@@ -36,7 +36,7 @@ public class TextFilter {
         return this;
     }
 
-    public TextFilter apply(
+    public EffectManager apply(
             Effect effect,
             int startIndex,
             int endIndex

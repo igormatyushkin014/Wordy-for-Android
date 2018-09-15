@@ -1,13 +1,13 @@
 package com.visuality.wordy.bridge;
 
-import com.visuality.wordy.tools.TextFilter;
+import com.visuality.wordy.tools.EffectManager;
 
 public class Wordy {
 
-    public static TextFilter effects(
+    public static EffectManager effects(
             String sourceText
     ) {
-        return new TextFilter(
+        return new EffectManager(
                 sourceText
         );
     }
