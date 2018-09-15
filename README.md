@@ -32,7 +32,7 @@ Then add `Wordy` to dependencies list:
 
 ```javascript
 dependencies {
-    implementation 'com.github.igormatyushkin014:Wordy-for-Android:1.0.1'
+    implementation 'com.github.igormatyushkin014:Wordy-for-Android:1.1'
 }
 ```
 
@@ -147,10 +147,12 @@ new InversionEffect()
 
 `TextCase` is used as a setting for `CaseEffect` instance. Available values are:
 
-- `ALL_UPPER` - Makes the entire text uppercased.
-- `ALL_LOWER` - Makes the entire text lowercased.
-- `FIRST_UPPER_NEXT_LOWER` - The first symbol is uppercased, other text is lowercased.
-- `FIRST_LOWER_NEXT_UPPER` - The first symbol is lowercased, other text is uppercased.
+- `ALL_UPPER`: Makes the entire text uppercased.
+- `ALL_LOWER`: Makes the entire text lowercased.
+- `FIRST_UPPER_NEXT_LOWER`: First symbol is uppercased, other text is lowercased.
+- `FIRST_LOWER_NEXT_UPPER`: First symbol is lowercased, other text is uppercased.
+- `ALTERNATING_FIRST_UPPER_CASE`: Odd symbols are uppercased, even symbols are lowercased.
+- `ALTERNATING_FIRST_LOWER_CASE`: Odd symbols are lowercased, even symbols are uppercased.
 
 ### Text Rotation
 
