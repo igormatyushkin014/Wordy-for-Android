@@ -1,8 +1,8 @@
 package com.visuality.wordy.effects;
 
-import com.visuality.wordy.data.RotationStore;
+import com.visuality.wordy.data.rotation.RotationStore;
 import com.visuality.wordy.types.TextRotation;
-import com.visuality.wordy.data.TextRotationRule;
+import com.visuality.wordy.data.rotation.TextRotationRule;
 
 public class RotationEffect extends Effect {
 

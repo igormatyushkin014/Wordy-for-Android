@@ -1,4 +1,4 @@
-package com.visuality.wordy.data;
+package com.visuality.wordy.data.rotation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
