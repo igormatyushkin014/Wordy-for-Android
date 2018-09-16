@@ -44,23 +44,25 @@ dependencies {
 
 ## Usage
 
-### Text Filter
+Everything starts with `Wordy` class. This is your entry point to all tools provided by the library.
 
-First of all, you need to get to know `TextFilter` class. Instance of `TextFilter` is your entry point to the world of amazing effects. Look at example below:
+### Text Effects
+
+Let's start with a very simple example of text effect:
 
 ```java
-String filteredText = new TextFilter("Hi!")
+String filteredText = Wordy.effects("Hi!")
     .apply(new InversionEffect())
     .getResult();
 System.out.println(filteredText); // "!iH"
 ```
 
-This is how it works. You have to get an instance of `TextFilter` and transfer source text to it. Then, apply some effects and retrieve the final text by `.getResult()` call.
+This is how it works: `Wordy.effects(...)` gives you an `EffectManager` instance configured for your source text. Then, you can apply some effects and retrieve the final text by `.getResult()` call.
 
 In the example above, the `InversionEffect` will be applied to the entire string. The same time, you can apply effect to a particular substring:
 
 ```java
-String filteredText = new TextFilter("Hi!")
+String filteredText = Wordy.effects("Hi!")
     .apply(new InversionEffect(), 0, 1) // Start index is 0, end index is 1
     .getResult();
 System.out.println(filteredText); // "iH!"
@@ -69,16 +71,14 @@ System.out.println(filteredText); // "iH!"
 You can add as many effects as you want:
 
 ```java
-String filteredText = new TextFilter("This text will be rotated")
+String filteredText = Wordy.effects("This text will be rotated")
     .apply(new RotationEffect(TextRotation.INVERTED))
     .apply(new InversionEffect())
     .getResult();
 System.out.println(filteredText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
 ```
 
-## Text Effects
-
-### Case Effect
+#### Case Effect
 
 Represented by `CaseEffect` class. Changes case for the entire text or letters at particular positions.
 
@@ -92,7 +92,7 @@ new CaseEffect(
 
 [`TextCase`](#text-case) is the only setting that defines `CaseEffect`'s behavior.
 
-### Rotation Effect
+#### Rotation Effect
 
 Represented by `RotationEffect` class. Rotates letters. For example,
 
@@ -125,7 +125,7 @@ new RotationEffect(
 
 It's case sensitive by default. Usually, it's enough to use the second constructor excepting cases when you need more flexibility.
 
-### Inversion Effect
+#### Inversion Effect
 
 Represented by `InversionEffect` class. Flips text from right to left, so
 
@@ -141,9 +141,9 @@ turns into
 new InversionEffect()
 ```
 
-## Options
+### Options
 
-### Text Case
+#### Text Case
 
 `TextCase` is used as a setting for `CaseEffect` instance. Available values are:
 
@@ -154,7 +154,7 @@ new InversionEffect()
 - `ALTERNATING_FIRST_UPPER_CASE`: Odd symbols are uppercased, even symbols are lowercased.
 - `ALTERNATING_FIRST_LOWER_CASE`: Odd symbols are lowercased, even symbols are uppercased.
 
-### Text Rotation
+#### Text Rotation
 
 `TextRotation` defines the conditions of symbol rotation. Available values:
 
