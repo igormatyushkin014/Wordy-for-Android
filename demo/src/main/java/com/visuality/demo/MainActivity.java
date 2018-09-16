@@ -21,11 +21,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         this.initializeTitleTextView();
         this.updateTitleTextView(
-                Wordy.effects("WORDY demo")
-                        .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
-                        .apply(new RotationEffect(TextRotation.INVERTED))
-                        .apply(new InversionEffect())
-                        .getResult()
+                this.generateTitle()
         );
     }
 
@@ -39,5 +35,13 @@ public class MainActivity extends Activity {
         this.titleTextView.setText(
                 title
         );
+    }
+
+    private String generateTitle() {
+        return Wordy.effects("WORDY demo")
+                .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                .apply(new RotationEffect(TextRotation.INVERTED))
+                .apply(new InversionEffect())
+                .getResult();
     }
 }
