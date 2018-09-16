@@ -10,8 +10,8 @@ public class TransliterationManagerTest {
 
     @Test
     public void transliterationManager_fromEnglishToRussian_isCorrect() {
-        String sourceText = "This is a test";
-        String assertion = "Тхис ис э тэст";
+        String sourceText = "This IS a test";
+        String assertion = "Тхис ИС а тэст";
         String result = new TransliterationManager(Language.ENGLISH, Language.RUSSIAN)
                 .getText(sourceText);
         Assert.assertTrue(
