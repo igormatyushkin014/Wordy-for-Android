@@ -78,9 +78,7 @@ String filteredText = Wordy.effects("This text will be rotated")
 System.out.println(filteredText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
 ```
 
-## Text Effects
-
-### Case Effect
+#### Case Effect
 
 Represented by `CaseEffect` class. Changes case for the entire text or letters at particular positions.
 
@@ -94,7 +92,7 @@ new CaseEffect(
 
 [`TextCase`](#text-case) is the only setting that defines `CaseEffect`'s behavior.
 
-### Rotation Effect
+#### Rotation Effect
 
 Represented by `RotationEffect` class. Rotates letters. For example,
 
@@ -127,7 +125,7 @@ new RotationEffect(
 
 It's case sensitive by default. Usually, it's enough to use the second constructor excepting cases when you need more flexibility.
 
-### Inversion Effect
+#### Inversion Effect
 
 Represented by `InversionEffect` class. Flips text from right to left, so
 
@@ -143,9 +141,9 @@ turns into
 new InversionEffect()
 ```
 
-## Options
+### Options
 
-### Text Case
+#### Text Case
 
 `TextCase` is used as a setting for `CaseEffect` instance. Available values are:
 
@@ -156,7 +154,7 @@ new InversionEffect()
 - `ALTERNATING_FIRST_UPPER_CASE`: Odd symbols are uppercased, even symbols are lowercased.
 - `ALTERNATING_FIRST_LOWER_CASE`: Odd symbols are lowercased, even symbols are uppercased.
 
-### Text Rotation
+#### Text Rotation
 
 `TextRotation` defines the conditions of symbol rotation. Available values:
 
