@@ -2,7 +2,7 @@ package com.visuality.wordy.tools;
 
 import com.visuality.wordy.effects.Effect;
 import com.visuality.wordy.types.TextChange;
-import com.visuality.wordy.types.TextSegment;
+import com.visuality.wordy.types.SubstringLocation;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class EffectManager {
     }
 
     public EffectManager apply(Effect effect) {
-        TextSegment segment = new TextSegment(
+        SubstringLocation segment = new SubstringLocation(
                 0,
                 this.sourceText.length() - 1
         );
@@ -41,13 +41,13 @@ public class EffectManager {
             int startIndex,
             int endIndex
     ) {
-        TextSegment segment = new TextSegment(
+        SubstringLocation location = new SubstringLocation(
                 startIndex,
                 endIndex
         );
         TextChange change = new TextChange(
                 effect,
-                segment
+                location
         );
         this.changes.add(
                 change
@@ -59,27 +59,27 @@ public class EffectManager {
         String resultText = new String(this.sourceText);
 
         for (TextChange change : this.changes) {
-            SegmentFinder segmentFinder = new SegmentFinder(
+            SubstringFinder substringFinder = new SubstringFinder(
                     resultText
             );
 
-            String substringBeforeSegment = segmentFinder.getSubstringBeforeSegment(
-                    change.getSegment()
+            String substringBeforeSelectedLocation = substringFinder.getSubstringBefore(
+                    change.getLocation()
             );
-            String substringFromSegment = segmentFinder.getSubstringFromSegment(
-                    change.getSegment()
+            String substringFromSelectedLocation = substringFinder.getSubstringFrom(
+                    change.getLocation()
             );
-            String substringAfterSegment = segmentFinder.getSubstringAfterSegment(
-                    change.getSegment()
-            );
-
-            String filteredSubstringFromSegment = change.getEffect().getFilteredText(
-                    substringFromSegment
+            String substringAfterSelectedLocation = substringFinder.getSubstringAfter(
+                    change.getLocation()
             );
 
-            resultText = substringBeforeSegment
-                    + filteredSubstringFromSegment
-                    + substringAfterSegment;
+            String filteredSubstringFromSelectedLocation = change.getEffect().getFilteredText(
+                    substringFromSelectedLocation
+            );
+
+            resultText = substringBeforeSelectedLocation
+                    + filteredSubstringFromSelectedLocation
+                    + substringAfterSelectedLocation;
         }
 
         return resultText;

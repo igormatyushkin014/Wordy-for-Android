@@ -10,19 +10,19 @@ public class TextChange {
         return this.effect;
     }
 
-    private TextSegment segment;
+    private SubstringLocation location;
 
-    public TextSegment getSegment() {
-        return this.segment;
+    public SubstringLocation getLocation() {
+        return this.location;
     }
 
     public TextChange(
             Effect effect,
-            TextSegment segment
+            SubstringLocation location
     ) {
         super();
 
         this.effect = effect;
-        this.segment = segment;
+        this.location = location;
     }
 }
