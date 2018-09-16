@@ -44,23 +44,25 @@ dependencies {
 
 ## Usage
 
-### Text Filter
+Everything starts with `Wordy` class. This is your entry point to all tools provided by the library.
 
-First of all, you need to get to know `TextFilter` class. Instance of `TextFilter` is your entry point to the world of amazing effects. Look at example below:
+### Text Effects
+
+Let's start with a very simple example of text effect:
 
 ```java
-String filteredText = new TextFilter("Hi!")
+String filteredText = Wordy.effects("Hi!")
     .apply(new InversionEffect())
     .getResult();
 System.out.println(filteredText); // "!iH"
 ```
 
-This is how it works. You have to get an instance of `TextFilter` and transfer source text to it. Then, apply some effects and retrieve the final text by `.getResult()` call.
+This is how it works: `Wordy.effects(...)` gives you an `EffectManager` instance configured for your source text. Then, you can apply some effects and retrieve the final text by `.getResult()` call.
 
 In the example above, the `InversionEffect` will be applied to the entire string. The same time, you can apply effect to a particular substring:
 
 ```java
-String filteredText = new TextFilter("Hi!")
+String filteredText = Wordy.effects("Hi!")
     .apply(new InversionEffect(), 0, 1) // Start index is 0, end index is 1
     .getResult();
 System.out.println(filteredText); // "iH!"
@@ -69,7 +71,7 @@ System.out.println(filteredText); // "iH!"
 You can add as many effects as you want:
 
 ```java
-String filteredText = new TextFilter("This text will be rotated")
+String filteredText = Wordy.effects("This text will be rotated")
     .apply(new RotationEffect(TextRotation.INVERTED))
     .apply(new InversionEffect())
     .getResult();
