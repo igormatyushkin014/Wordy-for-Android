@@ -194,7 +194,7 @@ The `Language` type is used for transliterations. Possible values:
 
 You can extend the functionality of `Wordy` without making changes to the library. Instead of sending pull request, simply create your own plugin.
 
-Each plugin is a subclass of abstract class named `Plugin`. Take a look at the example below:
+Each plugin is a subclass of the abstract class named `Plugin`. Take a look at the example below:
 
 ```java
 public static class Repeat extends Plugin {
@@ -217,6 +217,8 @@ This is a plugin that repeats the source text two times. All that you need to im
 
 - overrided constructor that takes `sourceText` parameter of `String` type;
 - `getResult()` method that returns `String` with filtered text.
+
+The core of your plugin's implementation is the `getResult()` method, inside of which you can implement any logic. To access the source text, simply use `getSourceText()` method.
 
 Now let's try to use the plugin:
 
