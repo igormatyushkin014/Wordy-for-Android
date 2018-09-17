@@ -49,7 +49,7 @@ public class BridgeTest {
         );
     }
 
-    private class Repeat extends Plugin {
+    public static class Repeat extends Plugin {
 
         public Repeat(
                 String sourceText
