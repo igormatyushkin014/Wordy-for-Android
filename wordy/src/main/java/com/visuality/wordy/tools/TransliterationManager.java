@@ -39,30 +39,51 @@ public class TransliterationManager {
         String resultText = new String(sourceText);
 
         for (TransliterationRule rule : rules) {
+            if (rule.getReplaceable().length() == 1) {
+                resultText = resultText.replace(
+                        new EffectManager(rule.getReplaceable())
+                                .apply(new CaseEffect(TextCase.ALL_UPPER))
+                                .getResult(),
+                        new EffectManager(rule.getReplacement())
+                                .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                                .getResult()
+                );
+            } else {
+                resultText = resultText.replace(
+                        new EffectManager(rule.getReplaceable())
+                                .apply(new CaseEffect(TextCase.ALL_UPPER))
+                                .getResult(),
+                        new EffectManager(rule.getReplacement())
+                                .apply(new CaseEffect(TextCase.ALL_UPPER))
+                                .getResult()
+                );
+
+                resultText = resultText.replace(
+                        new EffectManager(rule.getReplaceable())
+                                .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                                .getResult(),
+                        new EffectManager(rule.getReplacement())
+                                .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                                .getResult()
+                );
+
+                resultText = resultText.replace(
+                        new EffectManager(rule.getReplaceable())
+                                .apply(new CaseEffect(TextCase.FIRST_LOWER_NEXT_UPPER))
+                                .getResult(),
+                        new EffectManager(rule.getReplacement())
+                                .apply(new CaseEffect(TextCase.FIRST_LOWER_NEXT_UPPER))
+                                .getResult()
+                );
+            }
+
             resultText = resultText.replace(
                     new EffectManager(rule.getReplaceable())
-                            .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                            .apply(new CaseEffect(TextCase.ALL_LOWER))
                             .getResult(),
                     new EffectManager(rule.getReplacement())
-                            .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
+                            .apply(new CaseEffect(TextCase.ALL_LOWER))
                             .getResult()
-            );
-
-            resultText = resultText.replace(
-                    rule.getReplaceable().toUpperCase(),
-                    new EffectManager(rule.getReplacement())
-                            .apply(new CaseEffect(TextCase.FIRST_UPPER_NEXT_LOWER))
-                            .getResult()
-            );
-
-            resultText = resultText.replace(
-                    rule.getReplaceable().toUpperCase(),
-                    rule.getReplacement().toUpperCase()
-            );
-
-            resultText = resultText.replace(
-                    rule.getReplaceable(),
-                    rule.getReplacement()
             );
         }
 
