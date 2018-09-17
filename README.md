@@ -32,7 +32,7 @@ Then add `Wordy` to dependencies list:
 
 ```javascript
 dependencies {
-    implementation 'com.github.igormatyushkin014:Wordy-for-Android:1.3'
+    implementation 'com.github.igormatyushkin014:Wordy-for-Android:1.4'
 }
 ```
 
