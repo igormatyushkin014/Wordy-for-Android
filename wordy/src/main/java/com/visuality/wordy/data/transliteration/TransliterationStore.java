@@ -5,9 +5,159 @@ import com.visuality.wordy.types.Language;
 public class TransliterationStore {
 
     private static final TransliterationRule[] ENGLISH_TO_RUSSIAN_RULES = new TransliterationRule[] {
+
+            // 5 letters
+            new TransliterationRule.Builder()
+                    .setReplaceable("aught")
+                    .setReplacement("от")
+                    .build(),
+
+            // 4 letters
+            new TransliterationRule.Builder()
+                    .setReplaceable("ould")
+                    .setReplacement("уд")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ound")
+                    .setReplacement("аунд")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("eigh")
+                    .setReplacement("эй")
+                    .build(),
+
+            // 3 letters
+            new TransliterationRule.Builder()
+                    .setReplaceable("igh")
+                    .setReplacement("ай")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("eer")
+                    .setReplacement("иа")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("our")
+                    .setReplacement("ауэ")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("oor")
+                    .setReplacement("о")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("wor")
+                    .setReplacement("ё")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("air")
+                    .setReplacement("эа")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("oar")
+                    .setReplacement("о")
+                    .build(),
+
+            // 2 letters
+            new TransliterationRule.Builder()
+                    .setReplaceable("ee")
+                    .setReplacement("и")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ea")
+                    .setReplacement("и")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("oo")
+                    .setReplacement("у")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("th")
+                    .setReplacement("т")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("sh")
+                    .setReplacement("ш")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ch")
+                    .setReplacement("ч")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ph")
+                    .setReplacement("ф")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ck")
+                    .setReplacement("к")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ng")
+                    .setReplacement("нг")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("wh")
+                    .setReplacement("в")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("wr")
+                    .setReplacement("р")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("qu")
+                    .setReplacement("кв")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("all")
+                    .setReplacement("ол")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ai")
+                    .setReplacement("эй")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ay")
+                    .setReplacement("эй")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("oi")
+                    .setReplacement("ой")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("oy")
+                    .setReplacement("ой")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ow")
+                    .setReplacement("оу")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ou")
+                    .setReplacement("оу")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("ew")
+                    .setReplacement("ю")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("aw")
+                    .setReplacement("о")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("wa")
+                    .setReplacement("во")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("au")
+                    .setReplacement("о")
+                    .build(),
+            new TransliterationRule.Builder()
+                    .setReplaceable("gh")
+                    .setReplacement("ф")
+                    .build(),
+
+            // 1 letter
             new TransliterationRule.Builder()
                     .setReplaceable("a")
-                    .setReplacement("а")
+                    .setReplacement("э")
                     .build(),
             new TransliterationRule.Builder()
                     .setReplaceable("b")
@@ -83,7 +233,7 @@ public class TransliterationStore {
                     .build(),
             new TransliterationRule.Builder()
                     .setReplaceable("u")
-                    .setReplacement("у")
+                    .setReplacement("а")
                     .build(),
             new TransliterationRule.Builder()
                     .setReplaceable("v")
@@ -99,7 +249,7 @@ public class TransliterationStore {
                     .build(),
             new TransliterationRule.Builder()
                     .setReplaceable("y")
-                    .setReplacement("ы")
+                    .setReplacement("и")
                     .build(),
             new TransliterationRule.Builder()
                     .setReplaceable("z")
