@@ -18,4 +18,15 @@ public class TransliterationManagerTest {
                 result.equals(assertion)
         );
     }
+
+    @Test
+    public void transliterationManager_fromRussianToEnglish_isCorrect() {
+        String sourceText = "На самом деле, реализация данной библиотеки была, всё же, довольно трудным делом, но, в результате приложения серьёзных усилий, она была реализована.";
+        String assertion = "Na samom dele, realizatsiya dannoy biblioteki byla, vsyo zhe, dovol'no trudnym delom, no, v rezul'tate prilozheniya ser'yoznykh usiliy, ona byla realizovana.";
+        String result = new TransliterationManager(Language.RUSSIAN, Language.ENGLISH)
+                .getText(sourceText);
+        Assert.assertTrue(
+                result.equals(assertion)
+        );
+    }
 }
