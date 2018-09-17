@@ -33,7 +33,10 @@ public class Wordy {
             String sourceText
     ) {
         try {
-            return type.getConstructor().newInstance(
+            Constructor<T> constructor = type.getConstructor(
+                    String.class
+            );
+            return constructor.newInstance(
                     sourceText
             );
         } catch (NoSuchMethodException e) {
