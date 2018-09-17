@@ -54,6 +54,7 @@ Let's start with a very simple example of text effect:
 String filteredText = Wordy.effects("Hi!")
     .apply(new InversionEffect())
     .getResult();
+
 System.out.println(filteredText); // "!iH"
 ```
 
@@ -65,6 +66,7 @@ In the example above, the `InversionEffect` will be applied to the entire string
 String filteredText = Wordy.effects("Hi!")
     .apply(new InversionEffect(), 0, 1) // Start index is 0, end index is 1
     .getResult();
+
 System.out.println(filteredText); // "iH!"
 ```
 
@@ -75,6 +77,7 @@ String filteredText = Wordy.effects("This text will be rotated")
     .apply(new RotationEffect(TextRotation.INVERTED))
     .apply(new InversionEffect())
     .getResult();
+
 System.out.println(filteredText); // "рǝʇɐʇоɹ ǝq llıм ʇxǝʇ sıɥʇ"
 ```
 
@@ -150,6 +153,7 @@ String transliterated = Wordy.transliterate(
     Language.RUSSIAN,    // from Russian
     Language.ENGLISH     // to English
 ).getText("Привет!");
+
 System.out.println(transliterated); // "Privet!", which means "Hi!"
 ```
 
@@ -185,6 +189,47 @@ The `Language` type is used for transliterations. Possible values:
 
 - `ENGLISH`
 - `RUSSIAN`
+
+### Plugins
+
+You can extend the functionality of `Wordy` without making changes to the library. Instead of sending pull request, simply create your own plugin.
+
+Each plugin is a subclass of abstract class named `Plugin`. Take a look at the example below:
+
+```java
+public static class Repeat extends Plugin {
+
+    public Repeat(
+        String sourceText
+    ) {
+        super(sourceText);
+    }
+
+    @Override
+    public String getResult() {
+        return this.getSourceText()
+            + this.getSourceText();
+    }
+}
+```
+
+This is a plugin that repeats the source text two times. All that you need to implement is:
+
+- overrided constructor that takes `sourceText` parameter of `String` type;
+- `getResult()` method that returns `String` with filtered text.
+
+Now let's try to use the plugin:
+
+```java
+String repeatedText = Wordy.plugin(
+    Repeat.class,
+    "Test."
+).getResult();
+
+System.out.println(repeatedText); // "Test.Test."
+```
+
+As you can see, creating and using plugins for `Wordy` is quite easy. You can publish your plugins as separate library or send as a pull request if you want it to be included in the library after reviewal process.
 
 ## License
 
