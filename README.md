@@ -32,7 +32,7 @@ Then add `Wordy` to dependencies list:
 
 ```javascript
 dependencies {
-    implementation 'com.github.igormatyushkin014:Wordy-for-Android:1.2'
+    implementation 'com.github.igormatyushkin014:Wordy-for-Android:1.3'
 }
 ```
 
@@ -141,6 +141,23 @@ turns into
 new InversionEffect()
 ```
 
+### Transliteration
+
+Example of transliteration:
+
+```java
+String transliterated = Wordy.transliterate(
+    Language.RUSSIAN,    // from Russian
+    Language.ENGLISH     // to English
+).getText("Привет!");
+System.out.println(transliterated); // "Privet!", which means "Hi!"
+```
+
+Currently supported languages are:
+
+- English
+- Russian
+
 ### Options
 
 #### Text Case
@@ -161,6 +178,13 @@ new InversionEffect()
 - `NORMAL`: Forces all symbols to be rotated to normal position. It means that `ʎ` would become `y` and `h` would stay `h`.
 - `UPSIDE_DOWN`: Forces all symbols to be rotated upside down. In this case, `y` would turn into `ʎ`, but `ɥ` wouldn't change at all.
 - `INVERTED`: Normal symbols are forced to be rotated meanwhile rotated symbols become normal. So, `y` becomes `ʎ` and `ɥ` turns into `h`.
+
+#### Language
+
+The `Language` type is used for transliterations. Possible values:
+
+- `ENGLISH`
+- `RUSSIAN`
 
 ## License
 
