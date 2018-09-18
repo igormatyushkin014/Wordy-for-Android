@@ -199,9 +199,7 @@ Each plugin is a subclass of the abstract class named `Plugin`. Take a look at t
 ```java
 public static class Repeat extends Plugin {
 
-    public Repeat(
-        String sourceText
-    ) {
+    public Repeat(String sourceText) {
         super(sourceText);
     }
 
