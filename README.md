@@ -197,7 +197,7 @@ You can extend the functionality of `Wordy` without making changes to the librar
 Each plugin is a subclass of the abstract class named `Plugin`. Take a look at the example below:
 
 ```java
-public static class Repeat extends Plugin {
+public class Repeat extends Plugin {
 
     public Repeat(String sourceText) {
         super(sourceText);
